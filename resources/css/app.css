@@ -1,0 +1,200 @@
+@import 'components.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+            'Segoe UI Symbol', 'Noto Color Emoji';
+    }
+}
+
+/* Animasi untuk Hero Section */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s ease-in 0.3s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 0.6s ease-in 0.3s forwards;
+    opacity: 0;
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Gaya khusus untuk Hero Section Minimalis */
+.hero-minimal-gradient {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%);
+}
+
+.hero-minimal-card {
+    backdrop-filter: blur(10px);
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-minimal-accent {
+    background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
+}
+
+/* Responsive adjustments untuk animasi Hero */
+@media (max-width: 768px) {
+    .animate-slide-up {
+        animation: slideUp 1s ease-in 0.3s forwards;
+    }
+    
+    .animate-fade-in-delay {
+        animation: fadeIn 1s ease-in 0.6s forwards;
+    }
+    
+    .typing-text {
+        font-size: 2.5rem;
+    }
+}
+
+/* Gaya khusus untuk Testimonial Section */
+.testimonial-swiper {
+  padding: 20px 0;
+  position: relative;
+}
+
+.testimonial-swiper .swiper-slide {
+  padding: 20px;
+  height: auto;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+#testimonials .swiper-button-next,
+#testimonials .swiper-button-prev {
+  color: #ea580c; /* orange-600 */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  top: 50%;
+  margin-top: -25px;
+}
+
+#testimonials .swiper-button-next:hover,
+#testimonials .swiper-button-prev:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+#testimonials .swiper-button-next::after,
+#testimonials .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#testimonials .swiper-pagination {
+  bottom: 0px !important;
+}
+
+#testimonials .swiper-pagination-bullet {
+  background-color: #ea580c; /* orange-600 */
+  opacity: 0.2;
+}
+
+#testimonials .swiper-pagination-bullet-active {
+  background-color: #ea580c; /* orange-600 */
+  opacity: 1;
+}
+
+/* Gaya khusus untuk Projects dan Properties Section */
+#portfolio .swiper-button-next,
+#portfolio .swiper-button-prev,
+#properties .swiper-button-next,
+#properties .swiper-button-prev {
+  color: #ea580c; /* orange-600 */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  top: 50%;
+  margin-top: -25px;
+  /* Memperbaiki posisi tombol agar lebih melebar */
+  left: -40px;
+  right: auto;
+}
+
+#portfolio .swiper-button-next,
+#properties .swiper-button-next {
+  right: -40px;
+  left: auto;
+}
+
+#portfolio .swiper-button-next:hover,
+#portfolio .swiper-button-prev:hover,
+#properties .swiper-button-next:hover,
+#properties .swiper-button-prev:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+#portfolio .swiper-button-next::after,
+#portfolio .swiper-button-prev::after,
+#properties .swiper-button-next::after,
+#properties .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Rating Stars */
+.rating-stars {
+  display: flex;
+  gap: 2px;
+}

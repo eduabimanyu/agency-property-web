@@ -1,0 +1,6 @@
+/* File: resources/css/components.css */
+
+/* Import semua komponen */
+@import 'components/hero-minimal.css';
+
+/* Anda bisa menambahkan lebih banyak komponen di sini */

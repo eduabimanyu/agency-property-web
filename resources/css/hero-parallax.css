@@ -1,0 +1,41 @@
+/* Hero Parallax Styles */
+.parallax-window {
+    min-height: 100vh;
+    background: transparent;
+}
+
+.parallax-window .parallax-slider {
+    min-height: 100vh;
+}
+
+.parallax-window .parallax-slider img {
+    min-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Hero Content Styles */
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+}
