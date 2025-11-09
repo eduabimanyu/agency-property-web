@@ -69,6 +69,12 @@ class ProjectForm
                     ->image()
                     ->multiple()
                     ->directory('projects/gallery'),
+                TextInput::make('agency_name')
+                    ->label('Agency Name')
+                    ->maxLength(255),
+                TextInput::make('agency_phone')
+                    ->label('Agency Phone')
+                    ->maxLength(255),
             ]);
     }
 }

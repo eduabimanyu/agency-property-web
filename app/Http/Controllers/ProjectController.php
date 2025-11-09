@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -38,5 +39,21 @@ class ProjectController extends Controller
         }
         
         return view('projects.show', compact('project'));
+    }
+    
+    public function downloadBrochure(Project $project)
+    {
+        // Check if the project has an e_brochure
+        if (!$project->e_brochure) {
+            abort(404, 'Brochure not found');
+        }
+
+        // Check if the file exists in storage
+        if (!Storage::exists($project->e_brochure)) {
+            abort(404, 'Brochure file not found');
+        }
+
+        // Return the file for download
+        return Storage::download($project->e_brochure, basename($project->e_brochure));
     }
 }

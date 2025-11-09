@@ -14,6 +14,7 @@ Route::get('/properties/{property:slug}', [PropertyController::class, 'show'])->
 Route::get('/categories/{category:slug}', [PropertyController::class, 'category'])->name('categories.show');
 
 Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/projects/{project:slug}/download-brochure', [ProjectController::class, 'downloadBrochure'])->name('projects.download-brochure');
 
 Route::post('/brochure-request', [PropertyController::class, 'brochureRequest'])->name('brochure.request');
 Route::post('/contact', [PropertyController::class, 'contact'])->name('contact');

@@ -23,6 +23,8 @@ class Project extends Model
         'e_brochure',
         'image',
         'gallery_images',
+        'agency_name',
+        'agency_phone',
     ];
 
     protected $casts = [

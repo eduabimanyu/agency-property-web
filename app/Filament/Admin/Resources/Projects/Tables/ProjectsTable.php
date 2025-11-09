@@ -44,6 +44,14 @@ class ProjectsTable
                     ->label('Units')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('agency_name')
+                    ->label('Contact Name')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('agency_phone')
+                    ->label('Phone')
+                    ->searchable()
+                    ->sortable(),
                 ImageColumn::make('image')
                     ->label('Image')
                     ->size(60),
