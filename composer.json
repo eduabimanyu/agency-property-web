@@ -56,7 +56,12 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
-        ]
+        ],
+        
+    "vercel": [
+      "npm install",
+      "npm run build"
+    ]
     },
     "extra": {
         "laravel": {
@@ -72,6 +77,8 @@
             "php-http/discovery": true
         }
     },
+
+
     "minimum-stability": "stable",
     "prefer-stable": true
 }
